@@ -1,8 +1,6 @@
 from pydantic import BaseModel
 from typing import List
 
-
-# Модель для создания новой задачи
 class Todo(BaseModel):
     id: int
     item: str
@@ -11,12 +9,11 @@ class Todo(BaseModel):
         schema_extra = {
             "example": {
                 "id": 1,
-                "item": "Example Schema!"
+                "item": "Read the next chapter of the book!"
             }
         }
 
 
-# Модель для обновления задачи
 class TodoItem(BaseModel):
     item: str
 
@@ -28,7 +25,6 @@ class TodoItem(BaseModel):
         }
 
 
-# Модель ответа (response model)
 class TodoItems(BaseModel):
     todos: List[TodoItem]
 
